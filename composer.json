@@ -1,0 +1,20 @@
+{
+    "name": "sv/util",
+    "description": "A PHP Util Set For SV.",
+    "license": "MIT",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Sv\\Util\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "svcodestore",
+            "email": "svcodestore@yandex.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    }
+}
