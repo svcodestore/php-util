@@ -7,7 +7,13 @@
         "psr-4": {
             "Sv\\Util\\": "src/",
             "Proto_app\\": ["proto/App/Proto_app/"],
-            "GPBMetadata\\": ["proto/App/GPBMetadata/"]
+            "Proto_auth\\": ["proto/Auth/Proto_auth/"],
+            "Proto_permission\\": ["proto/Auth/Proto_permission/"],
+            "GPBMetadata\\": [
+                "proto/App/GPBMetadata/",
+                "proto/Auth/GPBMetadata/",
+                "proto/Permission/GPBMetadata/"
+            ]
         }
     },
     "authors": [
