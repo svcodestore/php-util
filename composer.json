@@ -5,7 +5,9 @@
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Sv\\Util\\": "src/"
+            "Sv\\Util\\": "src/",
+            "Proto_app\\": ["proto/App/Proto_app/"],
+            "GPBMetadata\\": ["proto/App/GPBMetadata/"]
         }
     },
     "authors": [
@@ -15,6 +17,8 @@
         }
     ],
     "require": {
-        "php": ">=7.4"
+        "php": ">=7.4",
+        "grpc/grpc": "^1.52",
+        "google/protobuf": "^3.23"
     }
 }

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package proto_app;
+
+import "google/protobuf/struct.proto";
+
+service App { rpc GetAppById(GetAppByIdRequest) returns (GetAppByIdResponse); }
+
+message GetAppByIdRequest { int64 Id = 1; }
+message GetAppByIdResponse { google.protobuf.Struct Result = 1; }
