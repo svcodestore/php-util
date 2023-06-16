@@ -30,4 +30,18 @@ class AppClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Proto_app\GetAhorizedMenusByAppIdAndUserIdRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetAhorizedMenusByAppIdAndUserId(\Proto_app\GetAhorizedMenusByAppIdAndUserIdRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/proto_app.App/GetAhorizedMenusByAppIdAndUserId',
+        $argument,
+        ['\Proto_app\GetAhorizedMenusByAppIdAndUserIdResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

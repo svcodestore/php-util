@@ -17,16 +17,22 @@ class App
         \GPBMetadata\Google\Protobuf\Struct::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ð
+þ
 	app.proto	proto_app"
 GetAppByIdRequest
 
 Id ("=
 GetAppByIdResponse\'
-Result (2.google.protobuf.Struct2P
+Result (2.google.protobuf.Struct"H
+\'GetAhorizedMenusByAppIdAndUserIdRequest
+AppId (
+UserId ("S
+(GetAhorizedMenusByAppIdAndUserIdResponse\'
+Result (2.google.protobuf.Struct2Þ
 AppI
 
-GetAppById.proto_app.GetAppByIdRequest.proto_app.GetAppByIdResponsebproto3'
+GetAppById.proto_app.GetAppByIdRequest.proto_app.GetAppByIdResponse‹
+ GetAhorizedMenusByAppIdAndUserId2.proto_app.GetAhorizedMenusByAppIdAndUserIdRequest3.proto_app.GetAhorizedMenusByAppIdAndUserIdResponsebproto3'
         , true);
 
         static::$is_initialized = true;

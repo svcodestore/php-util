@@ -1,0 +1,193 @@
+syntax = "proto3";
+
+package proto_permission;
+
+option go_package = "sv-mgrsys-auth/core/permission/rpc/proto";
+
+import "google/protobuf/struct.proto";
+
+service Permission {
+
+  rpc GetRoleById(GetRoleByIdRequest) returns (GetRoleByIdResponse);
+
+  rpc GetRoleUsersByUserId(GetRoleUsersByUserIdRequest) returns (GetRoleUsersByUserIdResponse);
+  rpc GetRoleUsersByAppIdAndUserId(GetRoleUsersByAppIdAndUserIdRequest) returns (GetRoleUsersByAppIdAndUserIdResponse);
+
+  rpc GetActionById(GetActionByIdRequest) returns (GetActionByIdResponse);
+
+  rpc GetPermissionsById(GetPermissionsByIdRequest)
+      returns (GetPermissionsByIdResponse);
+  rpc GetPermissionsByAppIdAndRoleId(GetPermissionsByAppIdAndRoleIdRequest)
+      returns (GetPermissionsByAppIdAndRoleIdResponse);
+  rpc GetPermissionsByAppIdAndRoleIds(GetPermissionsByAppIdAndRoleIdsRequest)
+      returns (GetPermissionsByAppIdAndRoleIdsResponse);
+  rpc GetPermissionsByAppIdAndRoleIdAndActionId(
+      GetPermissionsByAppIdAndRoleIdAndActionIdRequest)
+      returns (GetPermissionsByAppIdAndRoleIdAndActionIdResponse);
+  rpc GetPermissionsByAppIdAndRoleIdAndActionIds(
+      GetPermissionsByAppIdAndRoleIdAndActionIdsRequest)
+      returns (GetPermissionsByAppIdAndRoleIdAndActionIdsResponse);
+  rpc GetPermissionsByAppIdAndRoleIdsAndActionId(
+      GetPermissionsByAppIdAndRoleIdsAndActionIdRequest)
+      returns (GetPermissionsByAppIdAndRoleIdsAndActionIdResponse);
+  rpc GetPermissionsByAppIdAndRoleIdsAndActionIds(
+      GetPermissionsByAppIdAndRoleIdsAndActionIdsRequest)
+      returns (GetPermissionsByAppIdAndRoleIdsAndActionIdsResponse);
+  rpc GetPermissionsByAppIdAndRoleIdAndObjectType(
+      GetPermissionsByAppIdAndRoleIdAndObjectTypeRequest)
+      returns (GetPermissionsByAppIdAndRoleIdAndObjectTypeResponse);
+  rpc GetPermissionsByAppIdAndRoleIdAndObjectTypes(
+      GetPermissionsByAppIdAndRoleIdAndObjectTypesRequest)
+      returns (GetPermissionsByAppIdAndRoleIdAndObjectTypesResponse);
+  rpc GetPermissionsByAppIdAndRoleIdsAndObjectType(
+      GetPermissionsByAppIdAndRoleIdsAndObjectTypeRequest)
+      returns (GetPermissionsByAppIdAndRoleIdsAndObjectTypeResponse);
+  rpc GetPermissionsByAppIdAndRoleIdsAndObjectTypes(
+      GetPermissionsByAppIdAndRoleIdsAndObjectTypesRequest)
+      returns (GetPermissionsByAppIdAndRoleIdsAndObjectTypesResponse);
+  rpc GetPermissionsByAppIdAndRoleIdAndActionIdAndObjectType(
+      GetPermissionsByAppIdAndRoleIdAndActionIdAndObjectTypeRequest)
+      returns (GetPermissionsByAppIdAndRoleIdAndActionIdAndObjectTypeResponse);
+  rpc GetPermissionsByAppIdAndRoleIdsAndActionIdAndObjectType(
+      GetPermissionsByAppIdAndRoleIdsAndActionIdAndObjectTypeRequest)
+      returns (GetPermissionsByAppIdAndRoleIdsAndActionIdAndObjectTypeResponse);
+  rpc GetPermissionsByAppIdAndRoleIdsAndActionIdsAndObjectType(
+      GetPermissionsByAppIdAndRoleIdsAndActionIdsAndObjectTypeRequest)
+      returns (GetPermissionsByAppIdAndRoleIdsAndActionIdsAndObjectTypeResponse);
+  rpc GetPermissionsByAppIdAndRoleIdsAndActionIdsAndObjectTypes(
+      GetPermissionsByAppIdAndRoleIdsAndActionIdsAndObjectTypesRequest)
+      returns (GetPermissionsByAppIdAndRoleIdsAndActionIdsAndObjectTypesResponse);
+}
+
+message GetRoleUserByIdRequest { int64 Id  = 1; }
+message GetRoleUserByIdResponse { google.protobuf.Struct Result = 1; }
+message GetRoleUsersByUserIdRequest { int64 UserId = 1; }
+message GetRoleUsersByUserIdResponse { google.protobuf.Struct Result = 1; }
+message GetRoleUsersByAppIdAndUserIdRequest { int64 AppId = 1; int64 UserId = 2; }
+message GetRoleUsersByAppIdAndUserIdResponse { google.protobuf.Struct Result = 1; }
+
+message GetRoleByIdRequest { int64 Id = 1; }
+message GetRoleByIdResponse { google.protobuf.Struct Result = 1; }
+
+
+message GetActionByIdRequest { int64 Id = 1; }
+message GetActionByIdResponse { google.protobuf.Struct Result = 1; }
+
+
+message GetPermissionsByIdRequest { int64 Id = 1; }
+message GetPermissionsByIdResponse { google.protobuf.Struct Result = 1; }
+
+message GetPermissionsByAppIdAndRoleIdRequest {
+  int64 AppId = 1;
+  int64 RoleId = 2;
+}
+message GetPermissionsByAppIdAndRoleIdResponse {
+  google.protobuf.Struct Result = 1;
+}
+message GetPermissionsByAppIdAndRoleIdsRequest {
+  int64 AppId = 1;
+  repeated int64 RoleIds = 2;
+}
+message GetPermissionsByAppIdAndRoleIdsResponse {
+  google.protobuf.Struct Result = 1;
+}
+message GetPermissionsByAppIdAndRoleIdAndActionIdRequest {
+  int64 AppId = 1;
+  int64 RoleId = 2;
+  int64 ActionId = 3;
+}
+message GetPermissionsByAppIdAndRoleIdAndActionIdResponse {
+  google.protobuf.Struct Result = 1;
+}
+message GetPermissionsByAppIdAndRoleIdAndActionIdsRequest {
+  int64 AppId = 1;
+  int64 RoleId = 2;
+  repeated int64 ActionIds = 3;
+}
+message GetPermissionsByAppIdAndRoleIdAndActionIdsResponse {
+  google.protobuf.Struct Result = 1;
+}
+message GetPermissionsByAppIdAndRoleIdsAndActionIdRequest {
+  int64 AppId = 1;
+  repeated int64 RoleIds = 2;
+  int64 ActionId = 3;
+}
+message GetPermissionsByAppIdAndRoleIdsAndActionIdResponse {
+  google.protobuf.Struct Result = 1;
+}
+message GetPermissionsByAppIdAndRoleIdsAndActionIdsRequest {
+  int64 AppId = 1;
+  repeated int64 RoleIds = 2;
+  repeated int64 ActionIds = 3;
+}
+message GetPermissionsByAppIdAndRoleIdsAndActionIdsResponse {
+  google.protobuf.Struct Result = 1;
+}
+message GetPermissionsByAppIdAndRoleIdAndObjectTypeRequest {
+  int64 AppId = 1;
+  int64 RoleId = 2;
+  string ObjectType = 3;
+}
+message GetPermissionsByAppIdAndRoleIdAndObjectTypeResponse {
+  google.protobuf.Struct Result = 1;
+}
+message GetPermissionsByAppIdAndRoleIdAndObjectTypesRequest {
+  int64 AppId = 1;
+  int64 RoleId = 2;
+  repeated string ObjectTypes = 3;
+}
+message GetPermissionsByAppIdAndRoleIdAndObjectTypesResponse {
+  google.protobuf.Struct Result = 1;
+}
+message GetPermissionsByAppIdAndRoleIdsAndObjectTypeRequest {
+  int64 AppId = 1;
+  repeated int64 RoleIds = 2;
+  string ObjectType = 3;
+}
+message GetPermissionsByAppIdAndRoleIdsAndObjectTypeResponse {
+  google.protobuf.Struct Result = 1;
+}
+message GetPermissionsByAppIdAndRoleIdsAndObjectTypesRequest {
+  int64 AppId = 1;
+  repeated int64 RoleIds = 2;
+  repeated string ObjectTypes = 3;
+}
+message GetPermissionsByAppIdAndRoleIdsAndObjectTypesResponse {
+  google.protobuf.Struct Result = 1;
+}
+message GetPermissionsByAppIdAndRoleIdAndActionIdAndObjectTypeRequest {
+  int64 AppId = 1;
+  int64 RoleId = 2;
+  int64 ActionId = 3;
+  string ObjectType = 4;
+}
+message GetPermissionsByAppIdAndRoleIdAndActionIdAndObjectTypeResponse {
+  google.protobuf.Struct Result = 1;
+}
+message GetPermissionsByAppIdAndRoleIdsAndActionIdAndObjectTypeRequest {
+  int64 AppId = 1;
+  repeated int64 RoleIds = 2;
+  int64 ActionId = 3;
+  string ObjectType = 4;
+}
+message GetPermissionsByAppIdAndRoleIdsAndActionIdAndObjectTypeResponse {
+  google.protobuf.Struct Result = 1;
+}
+message GetPermissionsByAppIdAndRoleIdsAndActionIdsAndObjectTypeRequest {
+  int64 AppId = 1;
+  repeated int64 RoleIds = 2;
+  repeated int64 ActionIds = 3;
+  string ObjectType = 4;
+}
+message GetPermissionsByAppIdAndRoleIdsAndActionIdsAndObjectTypeResponse {
+  google.protobuf.Struct Result = 1;
+}
+message GetPermissionsByAppIdAndRoleIdsAndActionIdsAndObjectTypesRequest {
+  int64 AppId = 1;
+  repeated int64 RoleIds = 2;
+  repeated int64 ActionIds = 3;
+  repeated string ObjectTypes = 4;
+}
+message GetPermissionsByAppIdAndRoleIdsAndActionIdsAndObjectTypesResponse {
+  google.protobuf.Struct Result = 1;
+}

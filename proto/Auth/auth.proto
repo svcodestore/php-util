@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package proto_auth;
+
+import "google/protobuf/struct.proto";
+
+service Auth {
+    rpc GenAccessToken(GenAccessTokenRequest) returns (GenAccessTokenResponse) {}
+    rpc GenRefreshToken(GenRefreshTokenRequest) returns (GenRefreshTokenResponse) {}
+    rpc Logout(LogoutRequest) returns (LogoutResponse) {}
+}
+
+message GenAccessTokenRequest {
+    string grantType = 1;
+    string clientId = 2;
+    string clientSecret = 3;
+    string code = 4;
+    string redirectUri = 5;
+}
+message GenAccessTokenResponse {
+    google.protobuf.Struct Result = 1;
+}
+
+message GenRefreshTokenRequest {
+    string grantType = 1;
+    string clientId = 2;
+    string clientSecret = 3;
+    string refreshToken = 4;
+}
+message GenRefreshTokenResponse {
+    google.protobuf.Struct Result = 1;
+}
+
+message LogoutRequest {
+    string userId = 1;
+}
+message LogoutResponse {
+    google.protobuf.Struct Result = 1;
+}

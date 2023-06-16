@@ -4,7 +4,20 @@ package proto_app;
 
 import "google/protobuf/struct.proto";
 
-service App { rpc GetAppById(GetAppByIdRequest) returns (GetAppByIdResponse); }
+service App { 
+    rpc GetAppById(GetAppByIdRequest) returns (GetAppByIdResponse);
+
+    rpc GetAhorizedMenusByAppIdAndUserId(GetAhorizedMenusByAppIdAndUserIdRequest)
+        returns (GetAhorizedMenusByAppIdAndUserIdResponse); 
+}
 
 message GetAppByIdRequest { int64 Id = 1; }
 message GetAppByIdResponse { google.protobuf.Struct Result = 1; }
+
+message GetAhorizedMenusByAppIdAndUserIdRequest {
+    int64 AppId = 1;
+    int64 UserId = 2;
+}
+message GetAhorizedMenusByAppIdAndUserIdResponse {
+    google.protobuf.Struct Result = 1;
+}
