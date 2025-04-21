@@ -32,7 +32,7 @@ class Curl
         return $response;
     }
 
-    public static function post(string $url, array $params = [], array $headers = [])
+    public static function post(string $url, $params = [], array $headers = [])
     {
         $curl = curl_init();
 
@@ -48,16 +48,20 @@ class Curl
         ];
 
 
-        $opt[CURLOPT_HTTPHEADER] = $headers;
-
         if (!empty($params)) {
             if (!empty($headers)) {
                 $headers[] = ['Content-Type: application/x-www-form-urlencoded'];
             } else {
                 $headers = ['Content-Type: application/x-www-form-urlencoded'];
             }
-            $opt[CURLOPT_POSTFIELDS] = http_build_query($params);
+            if (in_array('Content-Type: application/x-www-form-urlencoded', $headers)) {
+                $opt[CURLOPT_POSTFIELDS] = http_build_query($params);
+            } elseif (in_array('Content-Type: application/json', $headers)) {
+                $opt[CURLOPT_POSTFIELDS] = $params;
+            }
         }
+
+        $opt[CURLOPT_HTTPHEADER] = $headers;
 
         curl_setopt_array(
             $curl,
